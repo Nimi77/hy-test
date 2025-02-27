@@ -1,0 +1,268 @@
+.container {
+  max-width: 37.5rem;
+  height: auto;
+  border-radius: 1rem;
+  background-color: #fff;
+  padding: 2.5rem 1.5rem;
+  margin: 4rem 1rem;
+  position: relative;
+}
+
+/* profile-setup */
+.profile-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.profile-setup .progress-bar {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+}
+.profile-setup .progress-bar .bars {
+  width: 7.5rem;
+  height: 0.5rem;
+  border-radius: 0.75rem;
+  background-color: #e6eef7;
+}
+.profile-setup .progress-bar .bars.active {
+  background-color: #0256b2;
+}
+.profile-setup .heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-setup .heading h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111;
+}
+.profile-setup .heading .form-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666666;
+}
+.profile-setup .heading .esa-point {
+  font-weight: 600;
+  font-size: 1rem;
+  padding-top: 0.375em;
+  color: #0256b2;
+}
+.profile-setup .step-reward {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 0.25rem;
+  padding: 0.875em;
+  border-radius: 0.75rem;
+  background: linear-gradient(0deg, #e6eef7, #e6eef7),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+}
+.profile-setup .step-reward p {
+  font-weight: 800;
+  font-size: 1.125rem;
+  color: #0256b2;
+}
+
+/* profile form */
+.form-container,
+.form-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-fieldset .form-group {
+  flex: 1;
+}
+.profile-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375em;
+}
+.form-group .form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.form-group .form-input,
+.form-group .form-select {
+  border-radius: 0.5rem;
+  padding: 0.75em 1em;
+  border: 1px solid #eaeaeb;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+  color: #7f8184;
+  width: 100%;
+}
+.form-group .form-select {
+  background: url("./assets/arrow-down.svg") no-repeat right 0.375rem center;
+  background-size: 0.8rem 0.75rem;
+  appearance: none;
+}
+.form-select option {
+  color: black;
+}
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.select-wrapper .select-label {
+  position: absolute;
+  right: 1.6rem;
+  top: 22%;
+  font-size: 1rem;
+  color: #7f8184;
+  pointer-events: none;
+  z-index: 10;
+}
+.error-message {
+  color: red;
+  font-size: 0.95rem;
+}
+
+/* base buttons */
+.profile-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+button.not-filled {
+  padding: 0.75em 1em;
+  border-radius: 0.5rem;
+  border-width: 0.125rem;
+  background-color: transparent;
+  font-weight: 700;
+}
+button.filled {
+  width: 100%;
+  padding: 0.75em 1em;
+  border-radius: 0.5rem;
+  border-width: 0.125rem;
+  background-color: #0256b2;
+  color: #fff;
+  font-weight: 700;
+}
+.profile-buttons button.filled {
+  width: 100%;
+  max-width: 13.875rem;
+}
+
+/* modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 1.5rem;
+  max-width: 30rem;
+  margin: auto;
+  box-shadow: 0 0.31rem 1.25rem 0 rgba(75, 70, 92, 0.4);
+}
+.modal-content .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+}
+.modal-content .close-btn:hover {
+  color: #d9534f;
+}
+.modal-content .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+}
+.modal-content .close-btn:hover {
+  color: #d9534f;
+}
+.modal-body .modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.modal-header .congrats-gif img {
+  max-width: 6.25rem;
+}
+.modal-header .congrats-text h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #5ec26a;
+}
+.congrats-text p {
+  color: #666666;
+}
+/* modal - rewards section */
+.modal-body .wes-points {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 0.25rem solid #ffffff;
+  color: #0256b2;
+  background: linear-gradient(0deg, #e6eef7, #e6eef7),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+}
+.wes-points .rewards-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.rewards-header h2 {
+  font-weight: 800;
+  font-size: 1.125rem;
+}
+.wes-points .rewards-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.rewards-content .reward-details .reward-points {
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-align: center;
+}
+.reward-details p {
+  padding-top: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    margin-inline: auto;
+  }
+  .form-fieldset {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+  .form-fieldset .form-group input {
+    width: auto;
+  }
+}
