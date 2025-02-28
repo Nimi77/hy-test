@@ -18,10 +18,7 @@ const CompletionModal = ({ handleClose }: CompletionModalProps) => {
           {/* header section with congratulatory message */}
           <div className="modal-header">
             <div className="congrats-gif">
-              <img
-                src="/congrats-animation.png"
-                alt="congratulation animation"
-              />
+              <img src="/wow-animation.gif" alt="wow animation" />
             </div>
             <div className="congrats-text">
               <h1>Congratulations</h1>

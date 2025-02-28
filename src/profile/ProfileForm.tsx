@@ -4,10 +4,10 @@ import { useForm } from "react-hook-form";
 
 // types for form fields to ensure type safety
 interface ProfileFormValues {
-  fieldOfStudy: string;
-  gpa: string;
   institution: string;
+  fieldOfStudy: string;
   journey: string;
+  gpa: string;
   interest: string;
 }
 
@@ -30,13 +30,15 @@ const ProfileForm = ({
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<ProfileFormValues>({
+    mode: "onSubmit",
     defaultValues: {
-      institution: "",
-      journey: "",
+      institution: "wesonline",
+      journey: "100",
       fieldOfStudy: "",
       gpa: "",
-      interest: "",
+      interest: "business",
     },
   });
 
@@ -45,6 +47,7 @@ const ProfileForm = ({
     if (isLastStep) {
       // mark form as completed on the last step
       onComplete(true);
+      reset();
     } else {
       // move to the next step
       setStepIndex(stepIndex + 1);
@@ -63,7 +66,6 @@ const ProfileForm = ({
               id="institution"
               className="form-select"
               {...register("institution")}
-              defaultValue="wesonline"
             >
               <option value="wesonline">WESOnline</option>
               <option value="harvard">Harvard University</option>
@@ -82,7 +84,6 @@ const ProfileForm = ({
                 id="journey"
                 className="form-select"
                 {...register("journey")}
-                defaultValue="100"
               >
                 <option value="100">100</option>
                 <option value="200">200</option>
@@ -117,11 +118,17 @@ const ProfileForm = ({
                 GPA <RequiredAsterisk />
               </label>
               <input
-                type="text"
+                type="number"
+                step="0.01"
                 id="gpa"
                 className="form-input"
                 placeholder="_ _ _ _ _"
-                {...register("gpa", { required: "GPA is required" })}
+                {...register("gpa", {
+                  required: "GPA is required",
+                  min: { value: 0, message: "GPA cannot be negative" },
+                  max: { value: 5, message: "GPA must be between 0 and 5" },
+                  valueAsNumber: true,
+                })}
               />
               {errors.gpa && (
                 <p className="error-message">{errors.gpa.message}</p>
@@ -137,7 +144,6 @@ const ProfileForm = ({
               id="interest"
               className="form-select"
               {...register("interest")}
-              defaultValue="business"
             >
               <option value="business">Business & Management</option>
               <option value="data-science">Data Science</option>
@@ -154,11 +160,7 @@ const ProfileForm = ({
           isLastStep={isLastStep}
           isFormComplete={Object.keys(errors).length === 0} // checks if there are no errors
           onBackStep={() => setStepIndex(stepIndex - 1)} // moves one step back
-          onNextStep={
-            isLastStep
-              ? () => onComplete(true)
-              : () => setStepIndex(stepIndex + 1)
-          } // calls onComplete when it's the last step, otherwise goes to the next step
+          onNextStep={handleSubmit(onSubmit)}
         />
       </form>
     </>

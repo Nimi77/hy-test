@@ -61,7 +61,7 @@
 }
 .profile-setup .step-reward p {
   font-weight: 800;
-  font-size: 1.125rem;
+  font-size: 1.058rem;
   color: #0256b2;
 }
 
@@ -138,7 +138,6 @@ button.not-filled {
   font-weight: 700;
 }
 button.filled {
-  width: 100%;
   padding: 0.75em 1em;
   border-radius: 0.5rem;
   border-width: 0.125rem;
@@ -148,7 +147,7 @@ button.filled {
 }
 .profile-buttons button.filled {
   width: 100%;
-  max-width: 13.875rem;
+  max-width: 8rem;
 }
 
 /* modal */
@@ -168,7 +167,7 @@ button.filled {
   position: relative;
   background-color: #fff;
   padding: 1.5rem;
-  max-width: 30rem;
+  max-width: 29.8rem;
   margin: auto;
   box-shadow: 0 0.31rem 1.25rem 0 rgba(75, 70, 92, 0.4);
 }
@@ -208,7 +207,8 @@ button.filled {
   margin-bottom: 1.5rem;
 }
 .modal-header .congrats-gif img {
-  max-width: 6.25rem;
+  width: 12.3125rem;
+  height: 12.3125rem;
 }
 .modal-header .congrats-text h1 {
   font-weight: 800;
@@ -245,7 +245,11 @@ button.filled {
   flex-direction: column;
   gap: 1.5rem;
 }
-.rewards-content .reward-details .reward-points {
+.rewards-content .reward-details {
+  min-width: min-content;
+  text-align: center;
+}
+.reward-details .reward-points {
   font-weight: 600;
   font-size: 1.125rem;
   text-align: center;

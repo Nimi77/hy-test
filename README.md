@@ -1,6 +1,6 @@
 # Profile Setup 
 
-A step-by-step profile setup interface built **Vite, React and Typescript**
+A step-by-step profile setup interface built with **Vite, React and Typescript**
 
 ## Features
 
